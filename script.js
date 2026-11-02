@@ -2,19 +2,15 @@ function mincost(arr)
 { 
 //write your code here
 // return the min cost
-  let cost=[]
-	let sum=0
-	for(let i of arr)
+	arr.sort((a,b)=>a-b)
+	let finalCost=0
+	for(let i=0;i<arr.length-1;i++)
 		{
-			sum+=i
-			cost.push(sum)
+			let cost=0
+			cost=arr[i]+arr[i+1]
+			finalCost+=cost
 		}
-	let minCost=0
-	for(let j of cost)
-		{
-			minCost+=j
-		}
-	return minCost
+	return finalCost
 }
 
 module.exports=mincost;
