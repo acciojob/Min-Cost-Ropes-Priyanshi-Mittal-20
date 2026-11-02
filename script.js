@@ -4,13 +4,13 @@ function mincost(arr)
 // return the min cost
 	arr.sort((a,b)=>a-b)
 	let finalCost=0
-	for(let i=0;i<arr.length;i++)
+	for(let i=0;i<arr.length-1;i++)
 		{
 			let cost=0
 			cost=arr[i]+arr[i+1]
 			finalCost+=cost
 		}
-	return finalCost
+	return finalCost+arr[arr.length-1]
 }
 
 module.exports=mincost;
